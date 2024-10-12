@@ -1,0 +1,208 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 400px;
+  height: calc(
+    100vh - 160px
+  ); /* Full height minus the 100px bottom margin and 60px top margin */
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0 100px 0; /* Adds 100px margin at the bottom */
+  display: flex;
+  flex-direction: column; /* Vertical stacking */
+  justify-content: space-between; /* Space between the elements */
+  color: #ecf0f1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center; /* Center-align the heading */
+  margin-bottom: 10px;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+}
+
+.add-task button {
+  padding: 10px;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task button:hover {
+  background-color: #16a085;
+}
+
+.task-list-container {
+  flex-grow: 1; /* Allow the task list to grow and take up available space */
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 4px 0;
+  border: 1px solid #34495e;
+  border-radius: 8px;
+  background: #2c3e50;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.task-list li:hover {
+  background-color: #34495e;
+}
+
+.task-list li div {
+  display: flex;
+  align-items: center;
+}
+
+.task-list li span {
+  margin-left: 10px;
+  color: #ecf0f1;
+  width: 280px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-list li input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #1abc9c;
+}
+
+.task-list li button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.task-list li button:hover {
+  color: #c0392b;
+}
+
+.delete-selected {
+  width: 100%; /* Full width */
+  padding: 15px 0; /* Increase the padding for a bigger button */
+  margin-top: 20px;
+  /* margin-bottom: 100px; */
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50px; /* Makes the button oval */
+  cursor: pointer;
+  font-size: 18px; /* Larger font size */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.delete-selected:hover {
+  background-color: #c0392b;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 75%;
+  }
+
+  .add-task input {
+    width: 65%;
+  }
+
+  .task-list li button {
+    right: 10px;
+    font-size: 14px;
+  }
+
+  .task-list li span {
+    width: 150px;
+  }
+
+  .add-task button {
+    width: auto;
+  }
+}
+
+/* Responsive styling for small devices */
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 75%;
+  }
+
+  .add-task input {
+    width: 60%;
+  }
+
+  .task-list li span {
+    width: 150px;
+  }
+
+  .task-list li button {
+    right: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Responsive styling for extra small devices */
+@media only screen and (max-width: 400px) {
+  .add-task input {
+    width: 55%;
+  }
+
+  .task-list li span {
+    width: 130px;
+  }
+
+  .task-list li button {
+    right: 8px;
+    font-size: 12px;
+  }
+}
